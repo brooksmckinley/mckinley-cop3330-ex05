@@ -39,4 +39,11 @@ public class AppTest {
         Assertions.assertEquals(App.divide(4, 1), 4);
         Assertions.assertEquals(App.divide(4, -1), -4);
     }
+
+    @Test
+    public void testReport() {
+        String expected = "10 + 5 = 15\n10 - 5 = 5\n10 * 5 = 50\n10 / 5 = 2";
+        String actual = App.generateReport(10, 5);
+        Assertions.assertEquals(expected, actual);
+    }
 }

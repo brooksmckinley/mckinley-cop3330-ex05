@@ -5,10 +5,26 @@
 
 package com.brooksmckinley;
 
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("What is the first number? ");
+        int firstNumber = scan.nextInt();
+        System.out.print("What is the second number? ");
+        int secondNumber = scan.nextInt();
 
+        System.out.println(generateReport(firstNumber, secondNumber));
+    }
+
+    public static String generateReport(int firstNumber, int secondNumber) {
+        String addReport = firstNumber + " + " + secondNumber + " = " + add(firstNumber, secondNumber) + "\n";
+        String subReport = firstNumber + " - " + secondNumber + " = " + subtract(firstNumber, secondNumber) + "\n";
+        String mulReport = firstNumber + " * " + secondNumber + " = " + multiply(firstNumber, secondNumber) + "\n";
+        String divReport = firstNumber + " / " + secondNumber + " = " + divide(firstNumber, secondNumber);
+        return addReport + subReport + mulReport + divReport;
     }
 
     public static int add(int a, int b) {
